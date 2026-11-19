@@ -20,7 +20,7 @@ mci_together <- full_join(select(as.data.frame(mci_info),-address, -latitude, -l
                           select(as.data.frame(mci_cases), docket_no, case_status, closing_date, close_code, room_rent_incr_amt),
                           by="docket_no")
 
-write_csv(mci_together, "mci_info.csv")
+write_csv(mci_together, paste0("data/mci_info_", Sys.Date(), ".csv"))
 
 # List of all the layers in the map
 # 0
